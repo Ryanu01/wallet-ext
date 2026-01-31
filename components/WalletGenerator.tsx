@@ -7,6 +7,7 @@ import { useState } from "react";
 import nacl from "tweetnacl";
 import bs58 from 'bs58';
 import { Card } from "./Card";
+import { Button } from "./ui/button";
 
 export default function WalletGenerator() {
 
@@ -37,8 +38,10 @@ export default function WalletGenerator() {
 
     return <div className="">
         <div className="flex justify-center">
-            <div className="border-2 bg-slate-300 rounded-xl">
-                <button onClick={generateMnemonics}>Click me</button>
+            <div className="">
+                <Button variant={"outline"} size={"lg"} onClick={generateMnemonics}>
+                        Click me
+                    </Button>
             </div>
         </div>
         {words ?

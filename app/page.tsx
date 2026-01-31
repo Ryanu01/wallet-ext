@@ -1,8 +1,12 @@
+import { NavBar } from "@/components/NavBar";
 import WalletGenerator from "@/components/WalletGenerator";
 
 
 export default function HOME () {
   return (
-    <WalletGenerator />
+    <div>
+      <NavBar />
+      <WalletGenerator />
+    </div>
   )
 }

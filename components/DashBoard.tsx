@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 import WalletGenerator from "./WalletGeneratortemp";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 
 export function DashBoard () {
@@ -19,6 +20,9 @@ export function DashBoard () {
         </h4>
         <div className="mt-5">
             <Button onClick={() => {
+                toast.success("Wallet selected. Please generate a wallet to continue.", {position: "bottom-right"})
+                console.log("after toast");
+                
                 localStorage.setItem("coin", "solana")
                 navigate.push("/wallet")
             }} className="cursor-pointer w-30 h-10" size={"lg"}>
@@ -26,6 +30,7 @@ export function DashBoard () {
             </Button>
             <Button onClick={() => {
                 localStorage.setItem("coin", "ethereum")
+                toast("Wallet selected. Please generate a wallet to continue.", {position: "bottom-right"})
                 navigate.push("/wallet")
             }} className="ml-4 h-10 w-30 cursor-pointer" size={"lg"}>
                 Ethereum

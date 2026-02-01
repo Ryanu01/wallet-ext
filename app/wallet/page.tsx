@@ -4,11 +4,11 @@ import Navbar from "@/components/NavBar";
 import { Secret } from "@/components/WalletGenerator";
 import { motion } from "framer-motion";
 import { redirect, useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function () {
 
   const router = useRouter()
-
   return <div className="max-w-7xl mx-auto flex flex-col gap-4 p-4 min-h-[92vh]">
     <motion.div
       className="flex flex-col gap-4"

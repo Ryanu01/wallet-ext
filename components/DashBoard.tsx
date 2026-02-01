@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "./ui/button";
-import WalletGenerator from "./WalletGeneratortemp";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Secret } from "./WalletGenerator";
@@ -10,7 +9,6 @@ import { Secret } from "./WalletGenerator";
 
 export function DashBoard () {
 
-    const [solana, setSolana] = useState("")
     const navigate = useRouter()
     return <div className="mt-15">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance">
@@ -30,7 +28,7 @@ export function DashBoard () {
             </Button>
             <Button onClick={() => {
                 localStorage.setItem("coin", "ethereum")
-                toast("Wallet selected. Please generate a wallet to continue.", {position: "bottom-right"})
+                toast.success("Wallet selected. Please generate a wallet to continue.", {position: "bottom-right"})
                 navigate.push("/wallet")
             }} className="ml-4 h-10 w-30 cursor-pointer" size={"lg"}>
                 Ethereum

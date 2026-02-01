@@ -39,12 +39,9 @@ export default function WalletGenerator() {
     }
 
     return <div className="">
-        {localStorage.getItem("Mnemonic") ? 
             <div>
-                Hi
-            </div> : <div>
                 <DashBoard />
             </div>
-        }
+        
     </div>
 }

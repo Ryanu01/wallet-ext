@@ -8,6 +8,7 @@ import nacl from "tweetnacl";
 import bs58 from 'bs58';
 import { Card } from "./Card";
 import { Button } from "./ui/button";
+import { DashBoard } from "./DashBoard";
 
 export default function WalletGenerator() {
 
@@ -17,6 +18,7 @@ export default function WalletGenerator() {
     function generateMnemonics() {
         const words = generateMnemonic()
         setWords(words)
+        console.log(words);
     }
 
     function generateSeed (words: string) {
@@ -37,46 +39,12 @@ export default function WalletGenerator() {
     }
 
     return <div className="">
-        <div className="flex justify-center">
-            <div className="">
-                <Button variant={"outline"} size={"lg"} onClick={generateMnemonics}>
-                        Click me
-                    </Button>
-            </div>
-        </div>
-        {words ?
-            <div className="mt-5 flex justify-center">
-                    {words}
-            </div> : <div className="mt-5 flex justify-center">
-                    No words
+        {localStorage.getItem("Mnemonic") ? 
+            <div>
+                Hi
+            </div> : <div>
+                <DashBoard />
             </div>
         }
-
-
-        <div className="flex justify-center mt-2">
-            <div className="border-2 bg-slate-300 rounded-br-sm">
-                <button onClick={() => {
-                    generateSeed(words)
-                }}>To generate seed</button>
-            </div>
-        </div>
-        {seed ? <div className="flex justify-center mt-5">
-            {seed}
-        </div> : <div className="flex justify-center mt-5">
-            null
-        </div> }
-
-        <div className="flex justify-center mt-5">
-            <div className="border-2 bg-slate-300 rounded-br-sm">
-                <button onClick={() => {
-                    generateSolanaKeypair(seed)
-                }}> Click</button>
-            </div>
-        </div>
-
-        <div>
-            <Card word="Hello"></Card>
-        </div>
-
     </div>
 }

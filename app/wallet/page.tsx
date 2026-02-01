@@ -20,10 +20,9 @@ export default function () {
       }}
     >
       <Navbar />
-      {localStorage.getItem("coin") === "solana" ?
-        <Secret coinType={501} /> : redirect("/")
+        {localStorage.getItem("coin") === "solana" ? 
+        <Secret coinType={501} /> : <Secret coinType={60}/>
       }
-      
     </motion.div>
   </div>
 }

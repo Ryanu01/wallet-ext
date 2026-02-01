@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import WalletGenerator from "./WalletGeneratortemp";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { Secret } from "./WalletGenerator";
 
 
 export function DashBoard () {
@@ -22,7 +23,6 @@ export function DashBoard () {
             <Button onClick={() => {
                 toast.success("Wallet selected. Please generate a wallet to continue.", {position: "bottom-right"})
                 console.log("after toast");
-                
                 localStorage.setItem("coin", "solana")
                 navigate.push("/wallet")
             }} className="cursor-pointer w-30 h-10" size={"lg"}>

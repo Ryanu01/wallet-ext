@@ -113,10 +113,6 @@ export function Secret({ coinType }: {
             </motion.div>
         )}
 
-
-
-
-
         {mnemonics && wallet.length > 0 && (
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
@@ -183,6 +179,27 @@ export function Secret({ coinType }: {
             </motion.div>
         )}
 
+        {wallet.length > 0 && (
+            <motion.div 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    delay: 0.3,
+                    duration: 0.3,
+                    ease: "easeInOut",
+                }}
+                className="flex flex-col gap-8 mt-6"
+            > 
+                <div className="flex justify-between">
+                    <h1 className="tracking-tighter text-3xl md:text-4xl font-extrabold">
+                        {coinType === 501 ? "Solana" : "Ethereum"} WAllet
+                    </h1>
+                    <div>
+                        dawd
+                    </div>
+                </div>
+            </motion.div>
+        )}
 
     </div >
 }

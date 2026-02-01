@@ -39,7 +39,7 @@ interface Wallet {
     privateKey: string
 }
 
-export function Secret({ coinType }: {
+export function WalletGenerator({ coinType }: {
     coinType: number
 }) {
 

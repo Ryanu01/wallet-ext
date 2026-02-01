@@ -1,7 +1,7 @@
 "use client"
 
 import Navbar from "@/components/NavBar";
-import { Secret } from "@/components/WalletGenerator";
+import { WalletGenerator } from "@/components/WalletGenerator";
 import { motion } from "framer-motion";
 import { redirect, useRouter } from "next/navigation";
 import { useState } from "react";
@@ -21,7 +21,7 @@ export default function () {
     >
       <Navbar />
         {localStorage.getItem("coin") === "solana" ? 
-        <Secret coinType={501} /> : <Secret coinType={60}/>
+        <WalletGenerator coinType={501} /> : <WalletGenerator coinType={60}/>
       }
     </motion.div>
   </div>

@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 export default function HOME () {
   return (
     <div className="max-w-7xl mx-auto flex flex-col gap-4 p-4 min-h-[92vh]">
-      {localStorage.getItem("wallets") ? redirect("/wallet") : 
+      
       <div>
         <motion.div
           className="flex flex-col gap-4"
@@ -22,7 +22,7 @@ export default function HOME () {
         <DashBoard />
         </motion.div>
         </div>
-      }
+      
     </div>
   )
 }

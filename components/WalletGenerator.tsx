@@ -19,7 +19,7 @@ import {
     Trash 
 } from "lucide-react"
 import { toast } from "sonner"
-import { useRouter } from "next/navigation"
+import { redirect, useRouter } from "next/navigation"
 import {
     AlertDialog, 
     AlertDialogAction, 
@@ -60,6 +60,8 @@ export function WalletGenerator({ coinType }: {
         const storedSeed = localStorage.getItem("seed")
         const storedWallets = localStorage.getItem("wallets")
         
+        
+
         if (storedMnemonics && storedSeed) {
             setMnemonics(storedMnemonics.split(" "))
             setSeed(storedSeed)
@@ -84,6 +86,10 @@ export function WalletGenerator({ coinType }: {
     useEffect(() => {
         if (wallet.length > visiblePrivateKeys.length) {
             setVisiblePrivateKeys(prev => [...prev, ...new Array(wallet.length - prev.length).fill(false)])
+        }
+        if(localStorage.getItem("wallets")?.length == 2) {
+            localStorage.setItem("wallets", '')
+            redirect("/")
         }
     }, [wallet.length])
 

@@ -2,12 +2,24 @@
 import { DashBoard } from "@/components/DashBoard";
 import Navbar from "@/components/NavBar";
 import { motion } from "framer-motion";
-import { redirect } from "next/navigation";
+import {  useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function HOME () {
+  const router = useRouter()
+  const [wallet, setWallet] = useState(0)
+
+  useEffect(() => {
+    const wallets = localStorage.getItem("wallets")
+
+    if (wallets && wallets.length > 0) {
+      router.push("/wallet")
+    }
+  }, [router])
+
+
   return (
     <div className="max-w-7xl mx-auto flex flex-col gap-4 p-4 min-h-[92vh]">
-      
       <div>
         <motion.div
           className="flex flex-col gap-4"

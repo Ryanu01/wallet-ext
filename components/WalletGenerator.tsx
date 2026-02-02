@@ -187,7 +187,7 @@ export function WalletGenerator({ coinType }: {
                 <Input
                     className="w-[85%] mr-5"
                     type="password"
-                    placeholder="Enter your secret phase (or leave blank to generate)"
+                    placeholder="Enter your secret phrase (or leave blank to generate)"
                     onChange={(e) => setSecretPhrase(e.target.value)}
                     value={secretPhrase}
                 />
